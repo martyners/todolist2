@@ -1,0 +1,11 @@
+.list {
+list-style: none;
+};
+
+.list__item {
+    color: aqua;
+};
+
+.list__item--done {
+    text-decoration: line-through;
+}
