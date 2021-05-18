@@ -18,6 +18,13 @@
     color: white;
 }
 
+.list__button:active {
+    border: black solid 2px;
+}
+
+.list__button:hover {
+    cursor: pointer;
+}
 
 .list__button--remove {
     background-color: red;
