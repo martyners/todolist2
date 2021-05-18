@@ -1,32 +1,35 @@
 {
-    const tasks = [
-        {
-            content: "zdanie 1",
-            done: true,
-        },
-        {
-            content: "zadanie 2",
-            done: false,
-        },
-    ];
+    const tasks = [];
+
+    removeTask = (index) => {
+        tasks.splice(index, 1);
+        render();
+    }
 
     const render = () => {
         let htmlString = "";
 
         for (const task of tasks) {
             htmlString += `
-                <li class="list__item js-item"> 
-                    ${task.content}
-                </li>
+            <li class="list__item js-item"> 
+            <button class="list__button"> </button>
+            <span class="list__taskContent">
+            ${task.content}
+            </span>
+            <button class="list__button list__button--remove js-remove"> 🗑 </button>
+            </li>
             `;
         };
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-        for (const task of tasks) {
-            if (task.done) {
-               document.querySelector(".js-item").classList.add("list__item--done");
-            }
-        }
+
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((removeButton, index) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(index);
+            })
+        })
+
     };
 
     const addNewTask = (newTaskContent) => {
