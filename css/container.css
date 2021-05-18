@@ -1,0 +1,15 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.container__header {
+    padding: 20xp;
+}
+
+.container__subHeader {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 3px;
+    }
