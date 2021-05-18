@@ -1,10 +1,21 @@
 {
     const tasks = [];
 
+    const addNewTask = (newTaskContent) => {
+        tasks.push({
+            content: newTaskContent,
+        });
+    };
+
     removeTask = (index) => {
         tasks.splice(index, 1);
         render();
-    }
+    };
+
+    toggleTaksDone = (index) => {
+        tasks[index].done = !tasks[index].done;
+        render();
+    };
 
     const render = () => {
         let htmlString = "";
@@ -12,7 +23,9 @@
         for (const task of tasks) {
             htmlString += `
             <li class="list__item js-item"> 
-            <button class="list__button"> </button>
+            <button class="list__button js-done"> 
+            ${task.done ? "✔" : ""}
+            </button>
             <span class="list__taskContent">
             ${task.content}
             </span>
@@ -27,16 +40,20 @@
         removeButtons.forEach((removeButton, index) => {
             removeButton.addEventListener("click", () => {
                 removeTask(index);
+            });
+        });
+
+        const toggleDoneButtons = document.querySelectorAll(".js-done");
+        toggleDoneButtons.forEach((toggleDoneButton, index) => {
+            toggleDoneButton.addEventListener("click", () => {
+                toggleTaksDone(index);
             })
         })
 
+
+
     };
 
-    const addNewTask = (newTaskContent) => {
-        tasks.push({
-            content: newTaskContent,
-        });
-    };
 
     const clearFormAndFocus = () => {
         document.querySelector(".js-newTask").value = "";
@@ -50,6 +67,7 @@
         if (newTaskContent === "") {
             return;
         };
+
         addNewTask(newTaskContent);
 
         clearFormAndFocus();
