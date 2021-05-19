@@ -53,7 +53,6 @@
 
         document.querySelector(".js-tasks").innerHTML = htmlString;
 
-
         bindEvents();
     };
 
@@ -67,6 +66,7 @@
 
         const newTaskContent = document.querySelector(".js-newTask").value.trim();
         if (newTaskContent === "") {
+            document.querySelector(".js-newTask").focus();
             return;
         };
 
@@ -83,7 +83,6 @@
         const formElement = document.querySelector(".js-form");
         formElement.addEventListener("submit", onFormSubmit);
     };
-
 
     init();
 }
