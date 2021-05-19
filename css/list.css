@@ -42,3 +42,7 @@
     margin: 0 10px;
     align-self: center;
 }
+
+.list__taskContent--done {
+    text-decoration: line-through;
+}

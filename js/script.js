@@ -43,7 +43,7 @@
             <button class="list__button js-done"> 
             ${task.done ? "✔" : ""}
             </button>
-            <span class="list__taskContent">
+            <span class="list__taskContent ${task.done? "list__taskContent--done" : ""}">
             ${task.content}
             </span>
             <button class="list__button list__button--remove js-remove"> 🗑 </button>
