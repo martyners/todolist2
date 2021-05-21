@@ -15,6 +15,7 @@
     align-self: center;
     justify-self: center;
     color: white;
+    padding: 0px;
 }
 
 .list__button:active {
@@ -50,7 +51,7 @@
 .list__taskContent {
     margin: 0 10px;
     align-self: center;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .list__taskContent--done {
