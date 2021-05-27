@@ -18,6 +18,11 @@
     margin-left: 20px;
     flex-grow: 0;
     flex-shrink: 0;
+    transition: 1s;
+}
+
+.form__button:hover {
+    transform: scale(1.1);
 }
 
 @media (max-width: 767px) {
